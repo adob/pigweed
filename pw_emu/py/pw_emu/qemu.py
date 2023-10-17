@@ -274,7 +274,7 @@ class QemuLauncher(Launcher):
             self._start_cmd.extend(args.split(' '))
 
         # initial/bootstrap qmp connection
-        self._qmp_init_sock = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+        self._qmp_init_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self._qmp_init_sock.bind(('localhost', 0))
         port = self._qmp_init_sock.getsockname()[1]
         self._qmp_init_sock.listen()
